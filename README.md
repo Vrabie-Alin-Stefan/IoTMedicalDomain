@@ -10,7 +10,7 @@ Coordinator:
 Members:
 1.ZAINESCU I. ELENA-IULIANA : luncanuiuliana@gmail.com
 2.APOSTOL L. IRINA : a.denisairina@yahoo.com
-3.SANDU IULIAN-DUMITRU 
+3.SANDU IULIAN-DUMITRU : sanduiulianica@yahoo.ro
 4.VRABIE G. ALIN-STEFAN : alinvs09@gmail.com
 
 Trello:
