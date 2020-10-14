@@ -9,7 +9,7 @@ Coordinator:
 
 Members:
 1.ZAINESCU I. ELENA-IULIANA : luncanuiuliana@gmail.com
-2.APOSTOL L. IRINA
+2.APOSTOL L. IRINA : a.denisairina@yahoo.com
 3.SANDU IULIAN-DUMITRU 
 4.VRABIE G. ALIN-STEFAN : alinvs09@gmail.com
 
