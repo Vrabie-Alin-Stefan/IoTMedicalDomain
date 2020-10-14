@@ -8,10 +8,10 @@ Coordinator:
 2.Milut Camelia
 
 Members:
-1.Iuliana Zainescu : luncanuiuliana@gmail.com
-2.Denisa Irina
-3.Sandu 
-4.Vrabie Alin : alinvs09@gmail.com
+1.ZAINESCU I. ELENA-IULIANA : luncanuiuliana@gmail.com
+2.APOSTOL L. IRINA
+3.SANDU IULIAN-DUMITRU 
+4.VRABIE G. ALIN-STEFAN : alinvs09@gmail.com
 
 Trello:
 https://trello.com/b/TgTF8gmq/teaching-weekly-planning
