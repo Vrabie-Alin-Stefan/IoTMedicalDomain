@@ -1,0 +1,14 @@
+	The main purpose for the ‘Remote patient monitoring’ apps (RPM apps) is to bring together doctors and patients through the same environment, sending the user’s health data to the doctors, so that they can monitor and provide medical advice to their patients. Lately, because of the COVID-19 stroke, the interest of the consumers in getting virtual consultations had increased significantly, RPM apps being a long-term strategy for healthcare providers. A way to implement a RPM app is to develop a IoT patient monitoring application, which gather user’s health data from smart sensors, health trackers and send them off to doctors.
+	When implementing a RPM app, there are some important things to consider – presenting data to patients, voice commands, battery and memory consumption, geolocation, transferring patient data to doctors, notifications.
+	Top RPM apps on the market: 
+•	‘Hale Health’ (works with several medical sensors; video calling; Apple Health integrations; Windows/Mac for providers, iOS/Android for patients)
+•	‘Qardio’ (blood pressure monitor, ECG readings, weight monitor; automatic detection of irregular heartbeats, notifications for friends and family; Apple/Android)
+•	‘HealthArc’ (EHR integrations; smartphone app/ cloud platform) [1]
+
+	Related Articles:
+“Iot Patient Health Monitoring System” (Shola Usha Rani, Antony Ignatious, Bhava Vyasa Hari, Balavishnu V J, 2017),[2] – The main aim of the project is to develop a system that continuously monitors vital body signs (body temperature, heart rate, pulse oximetry) and sense abnormalities. The sensors utilized – MPU-6050 (accelerometer and gyroscope; used for fall detection and sleep pattern analysis - awake, light sleep and deep sleep) and MAX30100 (heart beat, body temperature and blood oxygen level) – are connected to Rasberry Pi 3 Model B via I2C interface. The patient health data are read by the Pi, processed and sent to the AWS IoT Servcr (using the MQTT protocol). The system investigates the information in the past and alarms the specialist about huge changes. The monitored data is delivered to the medical staff and to the patient through an Android application, which queries data from DynamoDB and displays the heartbeat, SPO2, last fall detected, current sleep rate and a sleep history chart.   
+
+Bibliography
+[1] https://topflightapps.com/ideas/how-to-develop-a-remote-patient-monitoring-app/
+[2] S.O Alile,K.O Otokiti. (2020). IoT Based Patient Health Monitoring System: The Way Forward for Patient Health Monitoring in Nigeria. Journal of Science and Technology Research , https://www.researchgate.net/publication/322542647_Iot_Patient_Health_Monitoring_System
+
