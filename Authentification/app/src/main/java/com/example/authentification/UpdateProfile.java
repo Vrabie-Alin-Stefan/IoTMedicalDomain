@@ -160,13 +160,16 @@ public class UpdateProfile extends AppCompatActivity {
         GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(UpdateProfile.this, gso);
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
-
-        String[] parts = account.getEmail().split("@");
+        String new_email = "";
+        if (account.getEmail().contains(".")) {
+            String[] list = account.getEmail().split("\\.");
+            for (int i = 0; i < list.length; i++)
+                new_email = new_email.concat(list[i]);
+        }
+        String[] parts = new_email.split("@");
 
         mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("/users/");
-
-
 
         mFirebaseDatabase.child("user".concat(parts[0])).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -189,7 +192,13 @@ public class UpdateProfile extends AppCompatActivity {
 
     public void decideOperation(int operation, User user) {
         if (operation == 1) {
-            String[] parts = user.email.split("@");
+            String new_email = "";
+            if (user.email.contains(".")) {
+                String[] list = user.email.split("\\.");
+                for (int i = 0; i < list.length; i++)
+                    new_email = new_email.concat(list[i]);
+            }
+            String[] parts = new_email.split("@");
             updateUser(parts[0], inputNameText.getText().toString(),
                     inputEmailText.getText().toString(),
                     genderChoice,
@@ -197,7 +206,13 @@ public class UpdateProfile extends AppCompatActivity {
                     Integer.parseInt(weightText.getText().toString()),
                     Integer.parseInt(ageText.getText().toString()));
         } else {
-            String[] parts =  inputEmailText.getText().toString().split("@");
+            String new_email = "";
+            if (inputEmailText.getText().toString().contains(".")) {
+                String[] list = user.email.split("\\.");
+                for (int i = 0; i < list.length; i++)
+                    new_email = new_email.concat(list[i]);
+            }
+            String[] parts = new_email.split("@");
             createNewUser(parts[0], inputNameText.getText().toString(),
                     inputEmailText.getText().toString(),
                     genderChoice,
@@ -212,7 +227,8 @@ public class UpdateProfile extends AppCompatActivity {
     public void createNewUser(String id, String name, String email, String gender, int height, int weight, int age) {
         mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("users");
-        mFirebaseDatabase.child("user".concat(id)).setValue(new User(id, name, email, gender, height, weight, age));
+        String uniqueID = UUID.randomUUID().toString();
+        mFirebaseDatabase.child("user".concat(id)).setValue(new User(uniqueID, name, email, gender, height, weight, age));
     }
 
     public void updateUser(String id, String name, String email, String gender, int height, int weight, int age) {
