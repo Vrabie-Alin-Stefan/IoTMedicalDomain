@@ -1,0 +1,22 @@
+{
+  "addresses": [
+    {
+      "Street" : "Bulevardul Independenței",
+      "HouseNo" : 1,
+      "City" : "Iasi",
+      "Country" : "Romania"
+    },
+    {
+      "Street" : "Vasile Lupu",
+      "HouseNo" : 62,
+      "City" : "Iasi",
+      "Country" : "Romania"
+    },
+    {
+      "Street" : " Pantelimon Halipa",
+      "HouseNo" : 14,
+      "City" : "Iasi",
+      "Country" : "Romania"
+    }
+  ]
+}

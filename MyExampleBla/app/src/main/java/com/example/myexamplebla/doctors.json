@@ -1,0 +1,43 @@
+{
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Doctor1",
+      "registeredNo": 13692,
+      "department": 2,
+      "patients": [
+        {
+          "name": "Ion Barbu"
+        },
+        {
+          "name": "Mihai Eminescu"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Doctor2",
+      "registeredNo": 19842,
+      "department": 4,
+      "patients": [
+        {
+          "name": "Nichita Stanescu"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Doctor3",
+      "registeredNo": 24896,
+      "department": 5,
+      "patients": [
+        {
+          "name": "Ion Creanga"
+        },
+        {
+          "name": "Ana Blandiana"
+        }
+      ]
+    }
+  ]
+}
