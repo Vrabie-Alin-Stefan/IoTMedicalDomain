@@ -65,6 +65,13 @@ public class LoggedUser extends AppCompatActivity {
             }
         });
 
+        btnScanParams.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoggedUser.this, ScanParameters.class));
+            }
+        });
+
     }
 
 }

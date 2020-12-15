@@ -12,11 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Authentification">
         <activity
+            android:name=".ScanParameters"
+            android:parentActivityName=".LoggedUser"></activity>
+        <activity
             android:name=".LoggedUser"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".UpdateProfile"
-            android:parentActivityName=".LoggedUser"></activity>
+            android:parentActivityName=".LoggedUser" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

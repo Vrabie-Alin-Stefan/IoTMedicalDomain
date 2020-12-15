@@ -160,21 +160,26 @@ public class UpdateProfile extends AppCompatActivity {
         GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(UpdateProfile.this, gso);
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+
         String new_email = "";
-        if (account.getEmail().contains(".")) {
-            String[] list = account.getEmail().split("\\.");
+
+        String[] parts = account.getEmail().split("@");
+
+        if (parts[0].contains(".")) {
+            String[] list = parts[0].split("\\.");
             for (int i = 0; i < list.length; i++)
                 new_email = new_email.concat(list[i]);
+        } else {
+            new_email = parts[0];
         }
-        String[] parts = new_email.split("@");
 
         mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("/users/");
 
-        mFirebaseDatabase.child("user".concat(parts[0])).addListenerForSingleValueEvent(new ValueEventListener() {
+        mFirebaseDatabase.child("user".concat(new_email)).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                 if (snapshot.getValue() != null) {
+                if (snapshot.getValue() != null) {
                     user = snapshot.getValue(User.class);
                     decideOperation(1, user);
                 } else {
@@ -191,29 +196,37 @@ public class UpdateProfile extends AppCompatActivity {
     }
 
     public void decideOperation(int operation, User user) {
+        String new_email = "";
+
         if (operation == 1) {
-            String new_email = "";
-            if (user.email.contains(".")) {
-                String[] list = user.email.split("\\.");
+            String[] parts = user.email.split("@");
+
+            if (parts[0].contains(".")) {
+                String[] list = parts[0].split("\\.");
                 for (int i = 0; i < list.length; i++)
                     new_email = new_email.concat(list[i]);
+            } else {
+                new_email = parts[0];
             }
-            String[] parts = new_email.split("@");
-            updateUser(parts[0], inputNameText.getText().toString(),
+
+            updateUser(new_email, inputNameText.getText().toString(),
                     inputEmailText.getText().toString(),
                     genderChoice,
                     Integer.parseInt(heightText.getText().toString()),
                     Integer.parseInt(weightText.getText().toString()),
                     Integer.parseInt(ageText.getText().toString()));
         } else {
-            String new_email = "";
-            if (inputEmailText.getText().toString().contains(".")) {
-                String[] list = user.email.split("\\.");
+            String[] parts = inputEmailText.getText().toString().split("@");
+
+            if (parts[0].contains(".")) {
+                String[] list = parts[0].split("\\.");
                 for (int i = 0; i < list.length; i++)
                     new_email = new_email.concat(list[i]);
+            } else {
+                new_email = parts[0];
             }
-            String[] parts = new_email.split("@");
-            createNewUser(parts[0], inputNameText.getText().toString(),
+
+            createNewUser(new_email, inputNameText.getText().toString(),
                     inputEmailText.getText().toString(),
                     genderChoice,
                     Integer.parseInt(heightText.getText().toString()),
