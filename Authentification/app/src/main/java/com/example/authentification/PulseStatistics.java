@@ -52,20 +52,20 @@ public class PulseStatistics {
             }
         }
 
-        if (this.value > 110) {
+        if (this.value >= 100) {
             return "Too High!";
         }
 
-        return null;
+        return "Not normal";
     }
 
     public int statisticByGender(String gender) {
         if (gender.equals("female")) {
-            if (this.value < 90) {
+            if (this.value <= 90) {
                 return 1;
             }
         } else {
-            if (this.value < 85) {
+            if (this.value <= 85) {
                 return 1;
             }
         }

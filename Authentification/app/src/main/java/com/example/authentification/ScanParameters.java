@@ -59,17 +59,17 @@ public class ScanParameters extends AppCompatActivity {
         bmiEvaluatedInput = (TextView) findViewById(R.id.bmiEvaluated);
         pulseForBmi = (TextView) findViewById((R.id.pulseForBmi));
 
-        getUser();
-    }
-
-    public void getUser() {
-
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
         GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(ScanParameters.this, gso);
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+        getUser(account);
+    }
+
+    public void getUser(GoogleSignInAccount account) {
+
         String new_email = "";
         if (account.getEmail().contains(".")) {
             String[] list = account.getEmail().split("\\.");
